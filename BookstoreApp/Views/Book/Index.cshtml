@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Select Locale, Seed, AvgLikes, AvgReviews, and Buttons -->
+        <div id="controlsContainer">
+            <div>
+                <label>Language and Region:</label>
+                <select id="locale">
+                    <option value="en">English (US)</option>
+                    <option value="de">German (Germany)</option>
+                    <option value="fr">French (France)</option>
+                </select>
+            </div>
+            <div>
+                <label>Seed:</label>
+                <input type="number" id="seed" value="0">
+                <button onclick="generateRandomSeed()" class="btn">Random Seed</button>
+            </div>
+            <div>
+                <label>Average Likes:</label>
+                <input type="range" id="avgLikes" min="0" max="1000" step="10" value="100">
+            </div>
+            <div>
+                <label>Average Reviews:</label>
+                <input type="number" id="avgReviews" min="0" max="5" step="0.1" value="5">
+            </div>
+            <button id="generateBooksBtn" class="btn">Generate Books</button>
+        </div>
+
+        <!-- Book Table -->
+        <table id="booksTable">
+            <thead>
+                <tr>
+                    <th>Index</th>
+                    <th>ISBN</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be dynamically added -->
+            </tbody>
+        </table>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="loading" style="display: none;">Loading more books...</div>
+    </div>
+
+    <script src="/js/scripts.js"></script>
+</body>
+</html>
